@@ -1,0 +1,78 @@
+{% extends 'libapp/base.html' %}
+
+{% block body %}
+    {% if all_books  %}
+    <style>
+        .blog-main{
+            margin-top:100px;
+        }
+        .blog-main h1{
+            border-bottom :1px solid grey;
+            font-size: 5em;
+        }
+        
+        .most-popular{
+        margin-top: 80px;
+        text-align: center;
+        border-left: 2px solid black;
+        width:260px;
+        height: inherit;
+        }
+        .top-books{
+            margin-top: 80px;
+        text-align: center;
+        border-left: 2px solid black;
+        width:260px;
+        height: inherit;
+        }  
+        .new-books{
+        margin-top: 100px;
+        text-align: center;
+        border-left: 2px solid black;
+        width:260px;
+        height: inherit;
+        }
+    </style>
+    <div class="container">
+        <div class="row">
+                <div class="col-sm-8 blog-main">
+                    <h1>Dashboard</h1>
+                    <h2>Your Collection</h2>
+                </div>
+                        <div class="col-sm-3 offset-sm-1 blog-sidebar">
+                                        
+                            <div class="sidebar-module sidebar-module-inset new-books ">
+                                <h4><strong>New</strong></h1>    
+                                <ul>
+                                    {% for book in all_books %}
+                                    <li class='book'><a href="{% url 'libapp:details' book.id %}">{{ book.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                    
+                            <div class="sidebar-module sidebar-module-inset top-books ">
+                                    <h4><strong>Top Rated</strong></h1>    
+                                    <ul>
+                                        {% for book in all_books %}
+                                        <li class='book'><a href="{% url 'libapp:details' book.id %}">{{ book.name }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                            </div>
+                            
+                            <div class="sidebar-module sidebar-module-inset most-popular ">
+                                    <h4><strong>Most Popular</strong></h1>    
+                                    <ul>
+                                        {% for book in all_books %}
+                                        <li class='book'><a href="{% url 'libapp:details' book.id %}">{{ book.name }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                            </div>
+                        </div>
+                        
+        </div>
+    </div>
+        
+    {% else %}
+        <h2>You don't have any books</h2>
+    {% endif %}
+{% endblock %}

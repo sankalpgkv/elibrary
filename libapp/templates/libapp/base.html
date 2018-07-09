@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <title>{% block title %}Books{% endblock %}</title>
+    {% load staticfiles %}
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'libapp/style.css' %}" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+</head>
+
+
+<body id="page-top" name="page-top" class="active">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <!-- Navigation -->
+    	<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					 <!-- <a class="nav-btn btn-dark btn-lg accordion-toggle pull-left" title="Follow Us" role="tab" id="social-collapse" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></a> -->
+					<a id="menu-toggle" href="#" class="nav-btn btn-dark btn-lg toggle">
+						<i class="fa fa-bars" style="color:#fff;"></i>
+					</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse js-navbar-collapse">
+                		<ul class="nav navbar-nav navbar-left">
+                			<a class="navbar-brand" href="#">
+                					<span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+                					 Books</a>
+                			<li class="dropdown mega-dropdown">
+                				<a href="#" class="dropdown-toggle" data-toggle="dropdown">e-Books <span class="caret"></span></a>				
+                				<ul class="dropdown-menu mega-dropdown-menu">
+                					<li class="col-sm-3">
+                						<ul>
+                							<li class="dropdown-header">e-Book Collection</li>                            
+                                            <div id="eBookCollection" class="carousel slide" data-ride="carousel">
+                                              <div class="carousel-inner">
+                                                <div class="item active">
+                                                    <a href="#"><img src="http://placehold.it/254x150/ff3546/f5f5f5/&text=Thomas+Calculus" class="img-responsive" alt="product 1"></a>
+                                                    <h4><small>Thomas Calculus 11th Edition </small></h4>                                        
+                                                    <button class="btn btn-primary" type="button">Get PDF</button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>       
+                                                </div><!-- End Item -->
+                                                <div class="item">
+                                                    <a href="#"><img src="http://placehold.it/254x150/3498db/f5f5f5/&text=Hughes+Electrical" class="img-responsive" alt="product 2"></a>
+                                                    <h4><small>Hughes Electrical & Electronics Technology</small></h4>                                        
+                                                    <button class="btn btn-primary" type="button">Get PDF</button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>        
+                                                </div><!-- End Item -->
+                                                <div class="item">
+                                                    <a href="#"><img src="http://placehold.it/254x150/2ecc71/f5f5f5/&text=CLRS+Algorithms" class="img-responsive" alt="product 3"></a>
+                                                    <h4><small>Introduction to Algorithms 3rd Edition</small></h4>                                        
+                                                    <button class="btn btn-primary" type="button">Get PDF</button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>      
+                                                </div><!-- End Item -->                                
+                                              </div><!-- End Carousel Inner -->
+                                              <!-- Controls -->
+                                              <a class="left carousel-control" href="#eBookCollection" role="button" data-slide="prev">
+                                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                <span class="sr-only">Previous</span>
+                                              </a>
+                                              <a class="right carousel-control" href="#eBookCollection" role="button" data-slide="next">
+                                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                <span class="sr-only">Next</span>
+                                              </a>
+                                            </div><!-- /.carousel -->
+                                            <li class="divider"></li>
+                                            <li><a href="#">View all Collection <span class="glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+                						</ul>
+                					</li>
+                					<li class="col-sm-3">
+                						<ul>
+                							<li class="dropdown-header">New</li>
+                							<li><a href="#">Book1</a></li>
+                                            <li><a href="#">Book2</a></li>
+                                            <li><a href="#">Book3</a></li>
+                							<li><a href="#">Book4</a></li>
+                							<li class="divider"></li>
+                							<li class="dropdown-header">Top Rated</li>
+                                            <li><a href="#">Book1</a></li>
+                							<li><a href="#">Book2</a></li>
+                						</ul>
+                					</li>
+                					<li class="col-sm-3">
+                						<ul>
+                							<li class="dropdown-header">Your Favorites</li>
+                							<li><a href="#">Book1</a></li>
+                							<li><a href="#">Book2</a></li>
+                							<li><a href="#">Book3</a></li>                            
+                							<li><a href="#">Book4</a></li>							
+                						</ul>
+                					</li>
+                					<li class="col-sm-3">
+                						<ul>
+                							<li class="dropdown-header">Recommended</li>
+                                            <li><a href="#">Book1</a></li>
+                							<li><a href="#">Book2</a></li>
+                							<li><a href="#">Book3</a></li>                            
+                							<li><a href="#">Book4</a></li>	                         
+                						</ul>
+                					</li>
+                				</ul>				
+                			</li>
+                            <li class="dropdown mega-dropdown">
+                    			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Library<span class="caret"></span></a>				
+                				<ul class="dropdown-menu mega-dropdown-menu">
+                					<li class="col-sm-3">
+                    					<ul>
+                							<li class="dropdown-header">New</li>
+                							<li><a href="#">Book1</a></li>
+                							<li><a href="#">Book2</a></li>
+                							<li><a href="#">Book3</a></li>                            
+                							<li><a href="#">Book4</a></li>
+                							<li class="divider"></li>
+                							<li class="dropdown-header">Top Rated</li>
+                                            <li><a href="#">Book1</a></li>
+                							<li><a href="#">Book2</a></li>
+                						</ul>
+                					</li>
+                					<li class="col-sm-3">
+                						<ul>
+                							<li class="dropdown-header">Your Favorites</li>
+                							<li><a href="#">Book1</a></li>
+                							<li><a href="#">Book2</a></li>
+                							<li><a href="#">Book3</a></li>                            
+                							<li><a href="#">Book4</a></li>							
+                						</ul>
+                					</li>
+                					<li class="col-sm-3">
+                						<ul>
+                							<li class="dropdown-header">Recommended</li>
+                                            <li><a href="#">Book1</a></li>
+                							<li><a href="#">Book2</a></li>
+                							<li><a href="#">Book3</a></li>                            
+                							<li><a href="#">Book4</a></li>                         
+                						</ul>
+                					</li>
+                                    <li class="col-sm-3">
+                    					<ul>
+                							<li class="dropdown-header">Book Collection</li>                            
+                                            <div id="BookCollection" class="carousel slide" data-ride="carousel">
+                                              <div class="carousel-inner">
+                                                <div class="item active">
+                                                    <a href="#"><img src="http://placehold.it/254x150/3498db/f5f5f5/&text=ANSI-+C" class="img-responsive" alt="product 1"></a>
+                                                    <h4><small>ANSI-C</small></h4>                                        
+                                                    <button class="btn btn-primary" type="button">View</button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>       
+                                                </div><!-- End Item -->
+                                                <div class="item">
+                                                    <a href="#"><img src="http://placehold.it/254x150/ff3546/f5f5f5/&text=Accelerated+C++" class="img-responsive" alt="product 2"></a>
+                                                    <h4><small>Accelerated C++</small></h4>                                        
+                                                    <button class="btn btn-primary" type="button">View</button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>        
+                                                </div><!-- End Item -->
+                                                <div class="item">
+                                                    <a href="#"><img src="http://placehold.it/254x150/2ecc71/f5f5f5/&text=Engineering+Mechanics" class="img-responsive" alt="product 3"></a>
+                                                    <h4><small>Engineering Mechanics-Statics and Dynamics</small></h4>                                        
+                                                    <button class="btn btn-primary" type="button">View</button> <button href="#" class="btn btn-default" type="button"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>      
+                                                </div><!-- End Item -->                                
+                                              </div><!-- End Carousel Inner -->
+                                              <!-- Controls -->
+                                              <a class="left carousel-control" href="#BookCollection" role="button" data-slide="prev">
+                                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                <span class="sr-only">Previous</span>
+                                              </a>
+                                              <a class="right carousel-control" href="#BookCollection" role="button" data-slide="next">
+                                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                <span class="sr-only">Next</span>
+                                              </a>
+                                            </div><!-- /.carousel -->
+                                            <li class="divider"></li>
+                                            <li><a href="#">View all Collection <span class="glyphicon glyphicon-chevron-right pull-right"></span></a></li>
+                						</ul>
+                					</li>
+                				</ul>				
+                			</li>
+                            <li><a href="#">Articles</a></li>
+                		</ul>
+                        <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My account <span class="caret"></span></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Books Issued</a></li>
+                            <li><a href="#">My Wishlist</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Logout</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Publish an Article</a></li>
+                      </ul>
+                	</div><!-- /.nav-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+		<nav id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<a id="menu-close" href="#" class="btn btn-danger pull-right hidden-md hidden-lg toggle"><i class="fa fa-times"></i></a>
+				<li class="sidebar-brand">
+					<a><strong>Categories</strong></a>
+				</li>
+				<li>
+					<a href="/" title="Go to Top">Computer Science</a>
+				</li>
+				<li>
+					<a href="/about" title="Go to About Us section">Electrical Technology</a>
+				</li>
+				<li>
+					<a href="/resume" title="Navigate to Jonathan Adcox IT Resume">Electronics</a>
+				</li>
+				<li>
+					<a href="/portfolio" title="Navigate to 'Our Services' section">Communication</a>
+				</li>
+				<!-- Future Development
+				<li>
+					<a href="#portfolio">Portfolio</a>
+				</li> -->
+				<li>
+					<a href="/blog" title="Our Blog">Metallurgy</a>
+				</li>
+				<li>
+					<a href="/blog" title="Our Blog">Chemistry</a>
+				</li>
+				<li>
+					<a href="/blog" title="Our Blog">Physics</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="container">
+			<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+				<div class="modal-dialog modal-default">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h3>Login to Hosting Portal - Control Panel</h3>
+						</div>
+						<div class="modal-body">
+							<article class="container-form center-block">
+								<!-- Form Content HERE! -->
+								<form method="post" accept-charset="utf-8" autocomplete="off" role="form" class="form-horizontal" action="https://secure.yourwebhosting.com/secureLogin" enctype="application/x-www-form-urlencoded">
+									<fieldset>
+										<input type='hidden' name='__token_timestamp__' value='1426572610'>
+										<input type='hidden' name='__token_val__' value='4d96cad055fac46518825357fcb49390'>
+										<input type="hidden" name="destination" value="http://www.yourwebhosting.com/controlpanel/index.bml">
+										<!-- Name input-->
+										<div class="form-group">
+											<label class="sr-only" for="credential_0">Username: </label>
+											<div class="col-xs-12">
+												<input id="credential_0" name="credential_0" type="text" placeholder="Your Username" class="form-control">
+											</div>
+										</div>
+										<!-- Email input-->
+										<div class="form-group">
+											<label class="sr-only" for="credential_1">Password: </label>
+											<div class="col-xs-12">
+												<input id="email" type="password" name="credential_1" value="" placeholder="Your Password" class="form-control">
+											</div>
+										</div>
+										<!-- Form actions -->
+										<div class="form-group pull-right">
+											<div class="col-md-12 text-right">
+												<button type="submit" name="submit" value="Sign In" class="btn btn-lg">Submit</button>
+											</div>
+										</div>
+									</fieldset>
+								</form>
+							</article>
+						</div>
+						<div class="modal-footer">
+							Login Problems?
+							<button type="submit" class="btn btn-dark" data-dismiss="modal" data-href="#collapseTwo" data-toggle="collapse" data-target="#collapseTwo" style="cursor:pointer;">Contact Me</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+        <script src="{% static 'libapp/navjs.js' %}"></script>
+        <!-- <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script> -->
+        <script>
+    		$(document).ready(function(){
+				$("[rel='tooltip']").tooltip();
+			});
+        </script>
+        {% block body %}
+        {% endblock %}
+</body>
+</html>
