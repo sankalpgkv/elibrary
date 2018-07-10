@@ -1,18 +1,37 @@
 {% extends 'libapp/base.html' %}
 {% block title %}Book Details{% endblock %}
 {% block body %}
+
+<style>
+    form {
+        width: 50%;
+        margin: 0px auto;
+        text-align: center;
+    }
+</style>
 <div class="container jumbotron">
     <h1>{{ book.name }} </h1>
 
-    {% if error_message %}
-        <p><strong>{{ error_message }}</strong></p>
-    {% endif %}
 <ul>
     <li><span>Name: </span>{{ book.name }}</li>
     <li><span>Author: </span>{{ book.author_name }}</li>
     <li><span>Date Published: </span>{{ book.pub_date }}</li>
     <li><span>Publisher: </span>{{ book.publisher }}</li>
     <li><span>Rating: </span>{{ book.rating }}</li>
+    <li><li><span>Votes: </span>{{ book.num_votes }}</li></li>
 </ul>
 </div>
+{% if error_message %}
+<p><strong>{{ error_message }}</strong></p>
+{% endif %}
+<form class='rate' action="{% url 'libapp:rate' book.id %}" method="post">
+        {% csrf_token %}
+        {% for num in "12345" %}
+            <input type="radio" id="{{ forloop.counter }}" name="rate_val" value={{ num }}>
+            <label for="{{ forloop.counter }}" id="option">
+                {{ num }}
+            </label><br>
+        {% endfor %}
+        <input type="submit" value="Rate" >
+    </form>
 {% endblock %}

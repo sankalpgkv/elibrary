@@ -7,6 +7,8 @@ class Book(models.Model):
     author_name = models.CharField(max_length=200)
     rating = models.IntegerField(default=0) 
     publisher = models.CharField(max_length=200, default='None')
+    num_votes = models.IntegerField(default=0)
     
     def __str__(self):
         return self.name       
+ 
