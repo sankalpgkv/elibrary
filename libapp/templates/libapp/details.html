@@ -5,20 +5,30 @@
 <style>
     form {
         width: 50%;
-        margin: 0px auto;
+        margin: 40px auto;
         text-align: center;
+    }
+    .all_reviews {
+        border : 2px solid black;
+        background: white;
+        margin: 40px auto;
+    }
+    #review{
+        height:100px;
+        width:400px;
     }
 </style>
 <div class="container jumbotron">
     <h1>{{ book.name }} </h1>
 
 <ul>
+    <img src="{{ book.book_image }}" alt="book-image">
     <li><span>Name: </span>{{ book.name }}</li>
     <li><span>Author: </span>{{ book.author_name }}</li>
     <li><span>Date Published: </span>{{ book.pub_date }}</li>
     <li><span>Publisher: </span>{{ book.publisher }}</li>
     <li><span>Rating: </span>{{ book.rating }}</li>
-    <li><li><span>Votes: </span>{{ book.num_votes }}</li></li>
+    <li><span>Votes: </span>{{ book.num_votes }}</li>
 </ul>
 </div>
 {% if error_message %}
@@ -33,5 +43,20 @@
             </label><br>
         {% endfor %}
         <input type="submit" value="Rate" >
-    </form>
+</form>
+{% if error_message %}
+<p><strong>{{ error_message }}</strong></p>
+{% endif %}
+<form class='review' action="{% url 'libapp:review' book.id %}" method="post">
+        {% csrf_token %}
+        <span>{{ user.username }}</span><br>
+        <input type="text" id="review" name="review" placeholder="Write a Review.." />
+        <input type="submit" value="Post Review" >
+    {% for r in all_reviews %}
+        <div class="all_reviews">
+          <span><strong>{{ r.user }}</strong></span><br>
+          <p>{{ r.review_text }}</p>
+        </div>
+    {% endfor %}
+</form>
 {% endblock %}

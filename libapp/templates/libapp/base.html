@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <title>{% block title %}Books{% endblock %}</title>
+    <title>{% block title %}{{ user.username }}{% endblock %}</title>
     {% load staticfiles %}
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -31,7 +31,7 @@
                 		<ul class="nav navbar-nav navbar-left">
                 			<a class="navbar-brand" href="{% url 'libapp:index' %}">
                 					<span class="glyphicon glyphicon-book" aria-hidden="true"></span>
-                					 Books</a>
+                					{{ user.username }}</a>
                 			<li class="dropdown mega-dropdown">
                 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">e-Books <span class="caret"></span></a>				
                 				<ul class="dropdown-menu mega-dropdown-menu">
@@ -184,7 +184,7 @@
                             <li><a href="#">My Wishlist</a></li>
                             <li><a href="#">Settings</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Logout</a></li>
+                            <li><a href="{% url 'libapp:logout_user' %}">Logout</a></li>
                           </ul>
                         </li>
                         <li><a href="#">Publish an Article</a></li>
@@ -199,29 +199,25 @@
 					<a><strong>Categories</strong></a>
 				</li>
 				<li>
-					<a href="/" title="Go to Top">Computer Science</a>
+					<a href="/comp-science" title="comp-science">Computer Science</a>
 				</li>
 				<li>
-					<a href="/about" title="Go to About Us section">Electrical Technology</a>
+					<a href="/eee" title="eee">Electrical Technology</a>
 				</li>
 				<li>
-					<a href="/resume" title="Navigate to Jonathan Adcox IT Resume">Electronics</a>
+					<a href="/electronics" title="electronics">Electronics</a>
 				</li>
 				<li>
-					<a href="/portfolio" title="Navigate to 'Our Services' section">Communication</a>
-				</li>
-				<!-- Future Development
-				<li>
-					<a href="#portfolio">Portfolio</a>
-				</li> -->
-				<li>
-					<a href="/blog" title="Our Blog">Metallurgy</a>
+					<a href="/ece" title="ece">Communication</a>
 				</li>
 				<li>
-					<a href="/blog" title="Our Blog">Chemistry</a>
+					<a href="/meta" title="meta">Metallurgy</a>
 				</li>
 				<li>
-					<a href="/blog" title="Our Blog">Physics</a>
+					<a href="/chem" title="chem">Chemistry</a>
+				</li>
+				<li>
+					<a href="/physics" title="physics">Physics</a>
 				</li>
 			</ul>
 		</nav>
